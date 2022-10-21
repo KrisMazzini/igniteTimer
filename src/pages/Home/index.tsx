@@ -17,7 +17,7 @@ import {
 } from './styles'
 
 const newCycleFormValidationSchema = zod.object({
-  task: zod.string().min(1, 'A task is required'),
+  task: zod.string().min(5, 'A task is required'),
   minutesAmount: zod
     .number()
     .min(1, 'The cycle must last at least for 5 minutes')
@@ -153,7 +153,7 @@ export function Home() {
             id="minutesAmount"
             type="number"
             placeholder="00"
-            min={1}
+            min={5}
             max={60}
             step={5}
             disabled={!!activeCycle}
