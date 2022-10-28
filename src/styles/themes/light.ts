@@ -1,10 +1,10 @@
-export const defaultTheme = {
+export const lightTheme = {
   white: '#FFF',
 
-  background: '#121214',
-  layoutContainer: '#202024',
+  background: '#FFF',
+  layoutContainer: '#E1E1E6',
 
-  primaryTextColor: '#E1E1E6',
+  primaryTextColor: '#29292E',
 
   'gray-100': '#E1E1E6',
   'gray-300': '#C4C4CC',

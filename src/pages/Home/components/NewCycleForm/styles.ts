@@ -11,7 +11,7 @@ export const FormContainer = styled.div`
 
   font-size: 1.125rem;
   font-weight: bold;
-  color: ${(props) => props.theme['gray-100']};
+  color: ${(props) => props.theme.primaryTextColor};
 `
 
 const BaseInput = styled.input`
@@ -24,7 +24,7 @@ const BaseInput = styled.input`
   font-weight: bold;
   font-size: 1.125rem;
 
-  color: ${(props) => props.theme['gray-100']};
+  color: ${(props) => props.theme.primaryTextColor};
   background: transparent;
 
   &::placeholder {
