@@ -11,8 +11,6 @@ export function Countdown() {
 
   const [totalSecondsSpent, setTotalSecondsSpent] = useState(0)
 
-  console.log(totalSecondsSpent)
-
   const totalSeconds = activeCycle ? activeCycle.minutesAmount * 60 : 0
   const secondsLeft = activeCycle ? totalSeconds - totalSecondsSpent : 0
 
@@ -35,7 +33,7 @@ export function Countdown() {
       interval = setInterval(() => {
         const secondsDifference = differenceInSeconds(
           new Date(),
-          activeCycle.startDate,
+          new Date(activeCycle.startDate),
         )
 
         if (secondsDifference >= totalSeconds) {
