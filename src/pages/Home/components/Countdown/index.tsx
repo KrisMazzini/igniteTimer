@@ -27,7 +27,7 @@ export function Countdown() {
   }, [activeCycle, minutes, seconds])
 
   useEffect(() => {
-    let interval: number
+    let interval: NodeJS.Timeout
 
     if (activeCycle) {
       interval = setInterval(() => {
