@@ -1,4 +1,4 @@
-import { createContext, useState } from 'react'
+import { createContext, useEffect, useState } from 'react'
 import { BrowserRouter } from 'react-router-dom'
 import { ThemeProvider } from 'styled-components'
 
@@ -19,7 +19,17 @@ export const ThemeSwitcherContext = createContext(
 )
 
 export function App() {
-  const [currentTheme, setCurrentTheme] = useState(defaultTheme)
+  const [currentTheme, setCurrentTheme] = useState(() => {
+    const storageTheme = localStorage.getItem(
+      '@ignite-timer:current-theme-1.0.0',
+    )
+    if (storageTheme === 'light') {
+      return lightTheme
+    }
+
+    return defaultTheme
+  })
+
   const theme = currentTheme === defaultTheme ? 'default' : 'light'
 
   function switchTheme() {
@@ -29,6 +39,10 @@ export function App() {
       setCurrentTheme(defaultTheme)
     }
   }
+
+  useEffect(() => {
+    localStorage.setItem('@ignite-timer:current-theme-1.0.0', theme)
+  }, [theme])
 
   return (
     <ThemeSwitcherContext.Provider value={{ theme, switchTheme }}>
