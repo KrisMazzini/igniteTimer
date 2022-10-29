@@ -19,8 +19,8 @@ export const HistoryListContainer = styled.div`
       font-size: 0.875rem;
       line-height: 1.6;
 
-      background-color: ${(props) => props.theme['gray-600']};
-      color: ${(props) => props.theme['gray-100']};
+      background-color: ${(props) => props.theme.thirdBackground};
+      color: ${(props) => props.theme.primaryTextColor};
 
       &:first-child {
         border-top-left-radius: 8px;
@@ -35,12 +35,12 @@ export const HistoryListContainer = styled.div`
 
     td {
       padding: 1rem;
-      border-top: 4px solid ${(props) => props.theme['gray-800']};
+      border-top: 4px solid ${(props) => props.theme.primaryBackground};
 
       font-size: 0.875rem;
       line-height: 1.6;
 
-      background-color: ${(props) => props.theme['gray-700']};
+      background-color: ${(props) => props.theme.secondaryBackground};
 
       &:first-child {
         width: 50%;

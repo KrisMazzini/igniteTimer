@@ -1,10 +1,13 @@
 export const defaultTheme = {
   white: '#FFF',
 
-  background: '#121214',
-  layoutContainer: '#202024',
+  rootBackground: '#121214',
+  primaryBackground: '#202024',
+  secondaryBackground: '#29292E',
+  thirdBackground: '#323238',
 
   primaryTextColor: '#E1E1E6',
+  secondaryTextColor: '#C4C4CC',
 
   'gray-100': '#E1E1E6',
   'gray-300': '#C4C4CC',

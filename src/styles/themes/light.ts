@@ -1,10 +1,13 @@
 export const lightTheme = {
   white: '#FFF',
 
-  background: '#FFF',
-  layoutContainer: '#E1E1E6',
+  rootBackground: '#54B397',
+  primaryBackground: '#fff',
+  secondaryBackground: '#E1E1E6',
+  thirdBackground: '#C4C4CC',
 
   primaryTextColor: '#29292E',
+  secondaryTextColor: '#202024',
 
   'gray-100': '#E1E1E6',
   'gray-300': '#C4C4CC',

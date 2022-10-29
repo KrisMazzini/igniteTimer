@@ -7,12 +7,12 @@ export const CountdownContainer = styled.div`
   font-family: 'Roboto Mono', monospace;
   font-size: 10rem;
   line-height: 8rem;
-  color: ${(props) => props.theme['gray-100']};
+  color: ${(props) => props.theme.primaryTextColor};
 
   span {
     padding: 2rem 1rem;
     border-radius: 8px;
-    background: ${(props) => props.theme['gray-700']};
+    background: ${(props) => props.theme.secondaryBackground};
   }
 `
 

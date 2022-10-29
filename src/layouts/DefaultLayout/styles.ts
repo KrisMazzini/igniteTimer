@@ -11,5 +11,5 @@ export const LayoutContainer = styled.div`
   display: flex;
   flex-direction: column;
 
-  background: ${(props) => props.theme.layoutContainer};
+  background: ${(props) => props.theme.primaryBackground};
 `
