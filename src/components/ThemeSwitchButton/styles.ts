@@ -1,8 +1,5 @@
 import styled from 'styled-components'
-
-interface ButtonDisplayProps {
-  horizontalAlignment: string
-}
+import { animated } from 'react-spring'
 
 export const Button = styled.button`
   width: 3rem;
@@ -20,17 +17,25 @@ export const Button = styled.button`
   background-color: ${(props) => props.theme.background};
 `
 
-export const ButtonDisplay = styled.div<ButtonDisplayProps>`
+export const ButtonDisplay = styled(animated.div)`
   width: 1rem;
   height: 1rem;
 
   position: absolute;
   top: 0.25rem;
-  ${(props) => `${props.horizontalAlignment}: 0.25rem`};
 
   border-radius: 50%;
 
   cursor: inherit;
 
   background-color: ${(props) => props.theme.primaryTextColor};
+`
+export const IconsContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 0.25rem;
+
+  color: ${(props) => props.theme.primaryTextColor};
 `
