@@ -14,7 +14,7 @@ export const Button = styled.button`
 
   cursor: pointer;
 
-  background-color: ${(props) => props.theme.thirdBackground};
+  background-color: ${(props) => props.theme.secondaryBackground};
 `
 
 export const ButtonDisplay = styled(animated.div)`
