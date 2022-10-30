@@ -39,9 +39,18 @@ const BaseInput = styled.input`
 
 export const TaskInput = styled(BaseInput)`
   flex: 1;
+  flex-basis: 216px;
 
   &::-webkit-calendar-picker-indicator {
     display: none !important;
+  }
+
+  @media (max-width: 768px) {
+    flex-basis: 222px;
+  }
+
+  @media (max-width: 533px) {
+    flex-basis: 200px;
   }
 `
 

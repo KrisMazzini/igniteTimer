@@ -12,4 +12,9 @@ export const LayoutContainer = styled.div`
   flex-direction: column;
 
   background: ${(props) => props.theme.primaryBackground};
+
+  @media (max-width: 768px) {
+    height: 100vh;
+    margin: 0;
+  }
 `

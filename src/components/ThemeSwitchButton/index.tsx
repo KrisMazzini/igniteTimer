@@ -11,10 +11,10 @@ export function ThemeSwitchButton() {
 
   const buttonStyles = useSpring({
     from: {
-      left: theme === 'default' ? '0.25rem' : '1.75rem',
+      left: theme === 'default' ? '4px' : '28px',
     },
     to: {
-      left: theme === 'default' ? '1.75rem' : '0.25rem',
+      left: theme === 'default' ? '28px' : '4px',
     },
   })
 
