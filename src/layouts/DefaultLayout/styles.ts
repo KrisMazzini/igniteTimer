@@ -17,4 +17,9 @@ export const LayoutContainer = styled.div`
     height: 100vh;
     margin: 0;
   }
+
+  @media (max-height: 700px) {
+    margin: 0 auto;
+    height: 100vh;
+  }
 `
