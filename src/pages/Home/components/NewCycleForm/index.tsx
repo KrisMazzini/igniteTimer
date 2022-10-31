@@ -17,11 +17,7 @@ export function NewCycleForm() {
       (cycle) => cycle.task === currentCycle.task,
     )
 
-    if (isCycleUnique) {
-      uniqueCycles = [...uniqueCycles, currentCycle]
-    }
-
-    return uniqueCycles
+    return isCycleUnique ? [...uniqueCycles, currentCycle] : uniqueCycles
   }
 
   return (
