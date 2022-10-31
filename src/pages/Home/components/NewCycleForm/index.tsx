@@ -2,12 +2,27 @@ import { useContext } from 'react'
 import { useFormContext } from 'react-hook-form'
 
 import { CyclesContext } from '../../../../contexts/CyclesContext'
+import { Cycle } from '../../../../reducers/cycles/reducer'
 
 import { FormContainer, MinutesAmountInput, TaskInput } from './styles'
 
 export function NewCycleForm() {
-  const { activeCycle } = useContext(CyclesContext)
+  const { activeCycle, cycles } = useContext(CyclesContext)
   const { register } = useFormContext()
+
+  const uniqueCycleTasks = cycles.reduce(getUniqueCycleTasks, [])
+
+  function getUniqueCycleTasks(uniqueCycles: Cycle[], currentCycle: Cycle) {
+    const isCycleUnique = !uniqueCycles.some(
+      (cycle) => cycle.task === currentCycle.task,
+    )
+
+    if (isCycleUnique) {
+      uniqueCycles = [...uniqueCycles, currentCycle]
+    }
+
+    return uniqueCycles
+  }
 
   return (
     <FormContainer>
@@ -21,10 +36,9 @@ export function NewCycleForm() {
       />
 
       <datalist id="task-suggestion">
-        <option value="Projeto xablau 1" />
-        <option value="Projeto xablau 2" />
-        <option value="Projeto xablau 3" />
-        <option value="Projeto xablau 4" />
+        {uniqueCycleTasks.map((cycle) => (
+          <option value={cycle.task} key={cycle.id} />
+        ))}
       </datalist>
 
       <label htmlFor="minutesAmount">for</label>
