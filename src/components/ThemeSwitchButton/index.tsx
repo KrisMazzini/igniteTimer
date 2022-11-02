@@ -3,11 +3,11 @@ import { useSpring } from 'react-spring'
 
 import { Moon, Sun } from 'phosphor-react'
 
-import { ThemeSwitcherContext } from '../../App'
+import { ThemeContext } from '../../contexts/ThemeContext'
 import { ButtonDisplay, Button, IconsContainer } from './styles'
 
 export function ThemeSwitchButton() {
-  const { theme, switchTheme } = useContext(ThemeSwitcherContext)
+  const { theme, switchTheme } = useContext(ThemeContext)
 
   const buttonStyles = useSpring({
     from: {
