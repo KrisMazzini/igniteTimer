@@ -9,7 +9,13 @@ export function Countdown() {
   const { activeCycle, activeCycleId, markCurrentCycleAsFinished } =
     useContext(CyclesContext)
 
-  const [totalSecondsSpent, setTotalSecondsSpent] = useState(0)
+  const [totalSecondsSpent, setTotalSecondsSpent] = useState(() => {
+    if (activeCycle) {
+      return differenceInSeconds(new Date(), new Date(activeCycle.startDate))
+    }
+
+    return 0
+  })
 
   const totalSeconds = activeCycle ? activeCycle.minutesAmount * 60 : 0
   const secondsLeft = activeCycle ? totalSeconds - totalSecondsSpent : 0
@@ -23,6 +29,9 @@ export function Countdown() {
   useEffect(() => {
     if (activeCycle) {
       document.title = `${activeCycle.task} - ${minutes}:${seconds}`
+    } else {
+      document.title = 'Ignite Timer'
+      setTotalSecondsSpent(0)
     }
   }, [activeCycle, minutes, seconds])
 
@@ -38,6 +47,8 @@ export function Countdown() {
 
         if (secondsDifference >= totalSeconds) {
           markCurrentCycleAsFinished()
+          setTotalSecondsSpent(0)
+          clearInterval(interval)
         } else {
           setTotalSecondsSpent(secondsDifference)
         }
@@ -46,7 +57,6 @@ export function Countdown() {
 
     return () => {
       clearInterval(interval)
-      setTotalSecondsSpent(0)
     }
   }, [activeCycle, totalSeconds, activeCycleId, markCurrentCycleAsFinished])
 
